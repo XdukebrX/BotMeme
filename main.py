@@ -3,6 +3,11 @@ import requests
 import json
 import asyncio
 import random
+import os
+from decouple import config
+
+
+#Seting envi variables
 
 
 client = discord.Client()
@@ -13,6 +18,7 @@ gerais = [
   'cellbits',
   'G0ularte',
   'circojeca',
+  'dankmemes',
   'eu_nvr',
 ]
 
@@ -53,8 +59,8 @@ async def on_message(message):
       gerais.append(comu[1])
       print(gerais)
 
-
-client.run('OTAxMjE3OTc1MjAwMjYwMTA2.YXMqpQ.CeO_sb_nGiF35sb_D3RjYWUzksw')
+token = config('BOT_TOKEN')
+client.run(token)
 
 
 #embed.set_thumbnail(url='')
